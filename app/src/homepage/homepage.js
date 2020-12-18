@@ -8,30 +8,30 @@ class homepage extends React.Component {
 
    
    state = {
-       id:"1",
-     First:"vipin",
-     Last:"pandey",
-     Handel:"vipin@gmail.com",
+      
     Data:[{
         "id" : "0",
         "First": "hello",
         "Last":"pandey",
         "Handel":"vipin@122"
 
-    }]
+    },{
+        "id" : "1",
+        "First": "hello",
+        "Last":"pandey",
+        "Handel":"vipin@122"
+
+    },{
+        "id" : "2",
+        "First": "hello",
+        "Last":"pandey",
+        "Handel":"vipin@122"
+
+    }],
+    Data1:[]
     
     }
-hendelDelet1 = (stateId)=>{
-    const { Data } = this.state;
-    this.setState({
-        id: "",
-        First: "",
-        Last:"",
-        Handel:""
 
-    })
-  
-}
 hendelDelet(itemId){
     const { Data } = this.state;
     this.setState({
@@ -49,46 +49,20 @@ hendelDelet(itemId){
   
    let handel =  prompt("please enter your Email ", "vipin@gmail.com");
    
-  let data = {
-    id : id,
-    First: first,
-    Last: last,
-    Handel: handel
-   }
+  
    
-  let data1=Data.filter(Data =>Data.id !== itemId)
-  this.setState({
-    Data : [data]
-})
-
-
-
-
-}
-hendelEdit1 = ()=>{
-    const { Data } = this.state;
-    
-    let id = prompt("please enter id", "1")
-    if(id != null){
-        this.setState({id : id})
-   }
-    let first = prompt("please enter your First name", "vipin");
-    if(first != null){
-         this.setState({First : first})
-    }
-    let last= prompt("please enter your last name", "pandey");
-    if(last != null){
-        this.setState({Last : last})
-   }
-   let handel =  prompt("please enter your Email ", "vipin@gmail.com");
-   if(handel !=null){
-       this.setState({Handel : handel})
-   }
- 
-
-
+  let items = [...this.state.Data];
+  let item = {...items[itemId]};
+  item.id = id;
+  item.First=first;
+  item. Last= last;
+  item. Handel= handel;
+  console.log(item)
+      items[itemId]=item
+  this.setState({Data:items});
 
 }
+
 
     render(){
         
@@ -137,14 +111,7 @@ hendelEdit1 = ()=>{
                 </tr>
                 
                ))}
-                <tr>
-            <td className ={classes.tableData} scope="col">{this.state.id}</td>
-            <td className ={classes.tableData} >{this.state.First}</td>
-            <td className ={classes.tableData} >{this.state.Last}</td>
-            <td className ={classes.tableData} >{this.state.Handel}</td>
-            <td className ={classes.tableData} >{<i class="fas fa-edit btnedit" onClick ={()=>this.hendelEdit1(this.state.id)} ></i>}</td>
-            <td className ={classes.tableData} > {<i class="fas fa-trash-alt btndelete"  onClick ={()=>this.hendelDelet1(this.state.id) } ></i>}</td>
-            </tr>
+               
             </tbody>
         </table>
     </div>
