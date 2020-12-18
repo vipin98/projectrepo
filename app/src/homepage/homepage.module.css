@@ -1,0 +1,100 @@
+/* .d-flex input{
+    margin: .9em 0;
+}
+.d-flex button{
+    margin: 1.5em .6em;
+    padding: .3em 2.4em;
+}
+.container table{
+    margin: 1em 10em;
+}
+.btnedit{
+    cursor: pointer;
+    color: green;
+}
+.btndelete{
+    cursor: pointer;
+    color: tomato;
+} */
+h1{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 40px;
+}
+
+.homepage{
+    background-color: azure;
+    height: auto;
+    width: 100%;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+.homepageConatiner{
+    width: 50%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Inputone{
+    width: 95%;
+    margin-left: 12px;
+    margin-top: 12px;
+    padding: 8px;
+}
+.Inputwo{
+   width: 45%;
+   margin-left: 12px;
+   /* margin-right: 12px; */
+   margin-top: 12px;
+   padding: 8px;
+}
+button{
+    width: 100px;
+    padding: 10px;
+    margin: 8px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.butncontainer{
+    width: 80%;
+    margin-top: 20px;
+    padding-left: 100px;
+   
+}
+.btn1{
+    background-color: green;
+    /* margin-left: auto; */
+    margin-right: auto;
+    cursor: pointer;
+}
+.btn2{
+    background-color: blue;
+    cursor: pointer;
+}
+.btn3{
+    background-color: gold;
+    cursor: pointer;
+}
+.btn4{
+    background-color: red;
+    cursor: pointer;
+   
+}
+.Container{
+  width: 100%;
+}
+
+.tableHead{
+    /* padding: 20px; */
+    width: 140px;
+    height: 60px;
+    border-bottom: 2px solid black;
+}
+.tableData{
+    /* background-color: salmon; */
+    /* padding-left: 20px; */
+    height: 60px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
