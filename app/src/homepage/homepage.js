@@ -8,18 +8,12 @@ class homepage extends React.Component {
 
    
    state = {
-       id:"0",
+       id:"1",
      First:"vipin",
      Last:"pandey",
      Handel:"vipin@gmail.com",
     Data:[{
-        "id" : "1",
-        "First": "hello",
-        "Last":"pandey",
-        "Handel":"vipin@122"
-
-    },{
-        "id" : "2",
+        "id" : "0",
         "First": "hello",
         "Last":"pandey",
         "Handel":"vipin@122"
@@ -30,7 +24,11 @@ class homepage extends React.Component {
 hendelDelet1 = (stateId)=>{
     const { Data } = this.state;
     this.setState({
-        Data : Data.filter(Data =>Data.id !== stateId)
+        id: "",
+        First: "",
+        Last:"",
+        Handel:""
+
     })
   
 }
@@ -40,7 +38,36 @@ hendelDelet(itemId){
         Data : Data.filter(Data =>Data.id !== itemId)
     })
 }
- hendelEdit = ()=>{
+ hendelEdit = (itemId)=>{
+    const { Data } = this.state;
+    
+    let id = prompt("please enter id", "1")
+   
+    let first = prompt("please enter your First name", "vipin");
+    
+    let last= prompt("please enter your last name", "pandey");
+  
+   let handel =  prompt("please enter your Email ", "vipin@gmail.com");
+   
+  let data = {
+    id : id,
+    First: first,
+    Last: last,
+    Handel: handel
+   }
+   
+  let data1=Data.filter(Data =>Data.id !== itemId)
+  this.setState({
+    Data : [data]
+})
+
+
+
+
+}
+hendelEdit1 = ()=>{
+    const { Data } = this.state;
+    
     let id = prompt("please enter id", "1")
     if(id != null){
         this.setState({id : id})
@@ -57,36 +84,12 @@ hendelDelet(itemId){
    if(handel !=null){
        this.setState({Handel : handel})
    }
-  let hel =  prompt("Data update sucessfully", "");
+ 
 
-  if(hel !=null){
-    let data= {
-        id : this.state.id,
-        First: this.state.First,
-        Last:this.state.Last,
-        Handel:this.state.Handel
-    }
-       this.setState({
-              Data: [...this.state.Data, data]
-            });
-            console.log(data)
-  }
+
 
 }
-// handleAddRow = () => {
-//     const item = {
-//       name: "",
-//       mobile: ""
-//     };
-//     this.setState({
-//       rows: [...this.state.rows, item]
-//     });
-//   };
-//   handleRemoveRow = () => {
-//     this.setState({
-//       rows: this.state.rows.slice(0, -1)
-//     });
-//   };
+
     render(){
         
         return(
@@ -126,9 +129,9 @@ hendelDelet(itemId){
             <td className ={classes.tableData} >{item.First}</td>
             <td className ={classes.tableData} >{item.Last}</td>
             <td className ={classes.tableData} >{item.Handel}</td>
-            <td className ={classes.tableData} >{ <i class="fas fa-edit btnedit" onClick ={this.hendelEdit} ></i>}</td>
+            <td className ={classes.tableData} >{ <i class="fas fa-edit btnedit" onClick ={()=>this.hendelEdit(item.id)} ></i>}</td>
             <td className ={classes.tableData} > {<i class="fas fa-trash-alt btndelete"  onClick ={()=>this.hendelDelet(item.id)} ></i>}</td>
-            {/* <td  > <button onClick ={this.hendelsave}>save</button></td> */}
+          
         
     
                 </tr>
@@ -139,7 +142,7 @@ hendelDelet(itemId){
             <td className ={classes.tableData} >{this.state.First}</td>
             <td className ={classes.tableData} >{this.state.Last}</td>
             <td className ={classes.tableData} >{this.state.Handel}</td>
-            <td className ={classes.tableData} >{<i class="fas fa-edit btnedit" onClick ={this.hendelEdit} ></i>}</td>
+            <td className ={classes.tableData} >{<i class="fas fa-edit btnedit" onClick ={()=>this.hendelEdit1(this.state.id)} ></i>}</td>
             <td className ={classes.tableData} > {<i class="fas fa-trash-alt btndelete"  onClick ={()=>this.hendelDelet1(this.state.id) } ></i>}</td>
             </tr>
             </tbody>
