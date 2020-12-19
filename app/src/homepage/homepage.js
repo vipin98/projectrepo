@@ -41,7 +41,7 @@ hendelDelet(itemId){
  hendelEdit = (itemId)=>{
     const { Data } = this.state;
     
-    let id = prompt("please enter id", "1")
+//     let id = prompt("please enter id", "1")
    
     let first = prompt("please enter your First name", "vipin");
     
@@ -53,7 +53,7 @@ hendelDelet(itemId){
    
   let items = [...this.state.Data];
   let item = {...items[itemId]};
-  item.id = id;
+//   item.id = id;
   item.First=first;
   item. Last= last;
   item. Handel= handel;
